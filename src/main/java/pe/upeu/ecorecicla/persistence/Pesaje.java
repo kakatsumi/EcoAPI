@@ -53,6 +53,22 @@ public class Pesaje {
         this.fechaHora = fechaHora; this.codigoMuestra = codigoMuestra; this.estado = EstadoPesaje.ACTIVO;
     }
     public Long getId() { return id; }
+    public Ruta getRuta() { return ruta; }
+    public PuntoAcopio getPunto() { return punto; }
+    public Usuario getOperario() { return operario; }
+    public String getMaterial() { return material; }
+    public BigDecimal getPesoBruto() { return pesoBruto; }
+    public BigDecimal getTara() { return tara; }
     public BigDecimal getPesoNeto() { return pesoNeto; }
+    public String getObservaciones() { return observaciones; }
+    public LocalDateTime getFechaHora() { return fechaHora; }
     public EstadoPesaje getEstado() { return estado; }
+    public void corregir(String material, BigDecimal pesoBruto, BigDecimal tara, String observaciones) {
+        this.material = material;
+        this.pesoBruto = pesoBruto;
+        this.tara = tara;
+        this.pesoNeto = pesoBruto.subtract(tara);
+        this.observaciones = observaciones;
+    }
+    public void anular() { this.estado = EstadoPesaje.ANULADO; }
 }

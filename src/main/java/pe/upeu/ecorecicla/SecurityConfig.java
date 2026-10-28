@@ -66,6 +66,7 @@ public class SecurityConfig {
                         .requestMatchers(HttpMethod.POST, "/api/v1/auth/login").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/v1/pesajes/*/anular").hasAuthority("PESAJE_ANULAR")
                         .requestMatchers(HttpMethod.POST, "/api/v1/rutas/*/cerrar").hasAuthority("RUTA_CERRAR")
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/rutas/*/puntos/*/omision").hasAuthority("PESAJE_CREAR")
                         .requestMatchers(HttpMethod.GET, "/api/v1/puntos", "/api/v1/puntos/**").hasAuthority("PUNTO_LEER")
                         .requestMatchers("/api/v1/puntos", "/api/v1/puntos/**").hasAuthority("PUNTO_GESTIONAR")
                         .requestMatchers(HttpMethod.GET, "/api/v1/pesajes", "/api/v1/pesajes/**").hasAuthority("PESAJE_LEER")
