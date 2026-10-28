@@ -25,5 +25,6 @@ public class Ruta {
     public Long getId() { return id; }
     public LocalDate getFecha() { return fecha; }
     public EstadoRuta getEstado() { return estado; }
+    public void setEstado(EstadoRuta estado) { this.estado = estado; }
     public Usuario getOperario() { return operario; }
 }

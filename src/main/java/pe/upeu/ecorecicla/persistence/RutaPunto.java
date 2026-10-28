@@ -30,4 +30,5 @@ public class RutaPunto {
     public PuntoAcopio getPunto() { return punto; }
     public int getOrdenVisita() { return ordenVisita; }
     public String getMotivoOmision() { return motivoOmision; }
+    public void setMotivoOmision(String motivoOmision) { this.motivoOmision = motivoOmision; }
 }

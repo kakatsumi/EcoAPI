@@ -22,8 +22,12 @@ import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import pe.upeu.ecorecicla.persistence.NombreRol;
+import pe.upeu.ecorecicla.persistence.PesajeRepository;
 import pe.upeu.ecorecicla.persistence.Privilegio;
+import pe.upeu.ecorecicla.persistence.PuntoAcopioRepository;
 import pe.upeu.ecorecicla.persistence.Rol;
+import pe.upeu.ecorecicla.persistence.RutaPuntoRepository;
+import pe.upeu.ecorecicla.persistence.RutaRepository;
 import pe.upeu.ecorecicla.persistence.Usuario;
 import pe.upeu.ecorecicla.persistence.UsuarioRepository;
 
@@ -49,6 +53,10 @@ class SeguridadIntegrationTests {
     @Autowired JwtDecoder decoder;
     @Autowired JwtEncoder encoder;
     @MockitoBean UsuarioRepository usuarios;
+    @MockitoBean PuntoAcopioRepository puntos;
+    @MockitoBean RutaRepository rutas;
+    @MockitoBean RutaPuntoRepository rutaPuntos;
+    @MockitoBean PesajeRepository pesajes;
 
     @BeforeEach
     void prepararUsuario() {
